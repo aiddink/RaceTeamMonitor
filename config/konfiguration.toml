@@ -1,31 +1,37 @@
-# RaceTeamMonitor v0.1 Juli 2022
+# RaceTeamMonitor v0.2 Juli 2022
 # ------------------------------
-# Folgende Einstellungen müssen manuell in einem Texteditor erfolgen bevor
-# der RaceTeamMonitor gestartet wird. Dabei gilt es die Syntax exakt zu beachten, 
-# da es sonst zu Einlesefehlern kommt.
+# Folgende Einstellungen muessen manuell in einem Texteditor angepasst werden bevor
+# der RaceTeamMonitor genutzt werden kann. Dabei gilt es die Syntax exakt zu beachten, 
+# da es sonst zu Fehlern kommt.
 #
-# Offizieller Rennbeginn. Kann in der Oberfläche manuell angepasst werden falls sich der Start verzögert:
+# Offizieller Rennbeginn. Kann in der Oberflaeche manuell angepasst werden falls sich der Start verzoegert:
 rennbeginn_uhrzeit = "14:00"
 #
 # Offizielle Dauer des Rennens in Stunden:
 renndauer_stunden = 24.0
 #
-# Vollständige Länge der zu fahrenden Runde in Kilometern:
+# Vollstaendige Laenge der zu fahrenden Runde in Kilometern:
 runden_laenge_km = 25.8 
 #
-# Falls die erste Runde des Rennens (Formationsrunde) eine andere Länge hat:
+# Falls die erste Runde des Rennens (Formationsrunde) eine abweichende Laenge hat:
 formations_runden_laenge_km = 24.3
 #
-# Namen der Fahrer müssen kommasepariert in Anführungszeichen definiert werden.
-# Die Reihenfolge definiert gleichzeitig die Reihenfolge der Fahrer:
-fahrer_name = ["Chris","Andreas"]
+# Namen der Fahrer mmuessen kommasepariert in Anfuehrungszeichen definiert werden.
+# Die Reihenfolge definiert gleichzeitig die Reihenfolge in der gefahren wird.
+# Die Felder "fahrer_name", "erwartete_rundenzeit", "wechsel_intervall", und "glympse_karten_id" 
+# muessen die gleiche Anzahl an Elementen haben!
+# Beispiel: Zwei Fahrer Karl und Heinz; Karl faehrt die erste Runde --> fahrer_name = ["Karl","Heinz"]
+fahrer_name = []
 #
-# Für jeden Fahrer muss eine erwartete Rundenzeit in Minuten definiert werden:
-erwartete_rundenzeit = [50,52]
+# Fuer jeden Fahrer muss eine erwartete Rundenzeit in Minuten definiert werden.
+# Beispiel: Karl plant 50min und Heinz 52min fuer die 25.8km Runde --> erwartete_rundenzeit = [50,52]
+erwartete_rundenzeit = []
 #
-# Anzahl der Runden die jeder Fahrer am Stück beabsichtigt zu fahren bevor gewechselt wird:
-wechsel_intervall = [1,1]
+# Anzahl der Runden die jeder Fahrer am Stueck beabsichtigt zu fahren bevor gewechselt wird.
+# Beispiel: Beide Fahrer wollen jeweils nur eine Runde fahren und dann wechseln --> wechsel_intervall = [1,1]
+wechsel_intervall = []
 #
 # Glympse-ID der Fahrer, generiert mittels Android Glympse App, kann hier eingetragen werden um
 # mittels Kartendarstellung die Position des Smartphones darzustellen. Internetanbindung notwendig.
-glympse_karten_id = ["AAA","BBB"]
+# Beispiel: Karl hat kein Smartphone und daher keine App. Heinz nutzt die App und hat die ID XYZ --> glympse_karten_id = ["","XYZ"]
+glympse_karten_id = []

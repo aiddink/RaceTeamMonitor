@@ -117,6 +117,11 @@
     <QtUic Include="form\orderchange.ui" />
     <QtUic Include="form\raceteammonitor.ui" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="config\konfiguration.toml" />
+    <None Include="config\RaceTeamMonitor.ifp" />
+    <None Include="config\RaceTeamMonitor.streamDeckProfile" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

@@ -63,4 +63,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="config\konfiguration.toml" />
+    <None Include="config\RaceTeamMonitor.ifp" />
+    <None Include="config\RaceTeamMonitor.streamDeckProfile" />
+  </ItemGroup>
 </Project>

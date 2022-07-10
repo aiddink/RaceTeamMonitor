@@ -14,6 +14,17 @@ RaceTeamMonitor::RaceTeamMonitor(QWidget* parent)
     if (!std::filesystem::exists(_event.data_path))
         std::filesystem::create_directory(_event.data_path);
 
+    if (_event.drivers.empty())
+    {
+        QMessageBox msgBox;
+        msgBox.setText(QStringLiteral("Das Event wurde noch nicht vollständig konfiguriert. ")
+                      +QStringLiteral("Es müssen zunächst alle notwendigen Einstellungen erfolgen bevor der RaceTeamMonitor genutzt werden kann. ")
+                      +QStringLiteral("Dazu die Datei \"konfiguration.toml\" im Installationsverzeichnis mit einem Texteditor öffnen und die Konfiguration vornehmen. ")
+                      +QStringLiteral("Danach muss der RaceTeamMonitor neugestartet werden."));
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
+    }
+
     // create 0000.laps if not existent and init plots
     if(_event.drivers.size() > 0)
         initEvent();
@@ -251,7 +262,7 @@ EventInfo RaceTeamMonitor::parseEvent(std::string cfg_file)
     }
     catch (std::exception& e)
     {
-        QMessageBox(QMessageBox::Icon::Critical, "", "Datei \"konfiguration.toml\" konnte nicht gelesen werden. Syntax falsch.").exec();
+        QMessageBox(QMessageBox::Icon::Critical, "", "Datei \"konfiguration.toml\" konnte nicht erfolgreich gelesen werden. Syntax fehlerhaft.").exec();
     }
 
     std::string race_begin_time = *config->get_qualified_as<std::string>("rennbeginn_uhrzeit");        // rennbeginn_uhrzeit = "14:00"
