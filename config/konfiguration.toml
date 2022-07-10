@@ -1,0 +1,31 @@
+# RaceTeamMonitor v0.1 Juli 2022
+# ------------------------------
+# Folgende Einstellungen müssen manuell in einem Texteditor erfolgen bevor
+# der RaceTeamMonitor gestartet wird. Dabei gilt es die Syntax exakt zu beachten, 
+# da es sonst zu Einlesefehlern kommt.
+#
+# Offizieller Rennbeginn. Kann in der Oberfläche manuell angepasst werden falls sich der Start verzögert:
+rennbeginn_uhrzeit = "14:00"
+#
+# Offizielle Dauer des Rennens in Stunden:
+renndauer_stunden = 24.0
+#
+# Vollständige Länge der zu fahrenden Runde in Kilometern:
+runden_laenge_km = 25.8 
+#
+# Falls die erste Runde des Rennens (Formationsrunde) eine andere Länge hat:
+formations_runden_laenge_km = 24.3
+#
+# Namen der Fahrer müssen kommasepariert in Anführungszeichen definiert werden.
+# Die Reihenfolge definiert gleichzeitig die Reihenfolge der Fahrer:
+fahrer_name = ["Chris","Andreas"]
+#
+# Für jeden Fahrer muss eine erwartete Rundenzeit in Minuten definiert werden:
+erwartete_rundenzeit = [50,52]
+#
+# Anzahl der Runden die jeder Fahrer am Stück beabsichtigt zu fahren bevor gewechselt wird:
+wechsel_intervall = [1,1]
+#
+# Glympse-ID der Fahrer, generiert mittels Android Glympse App, kann hier eingetragen werden um
+# mittels Kartendarstellung die Position des Smartphones darzustellen. Internetanbindung notwendig.
+glympse_karten_id = ["AAA","BBB"]

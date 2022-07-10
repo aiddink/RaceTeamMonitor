@@ -23,33 +23,44 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="raceteammonitor.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-    <QtUic Include="raceteammonitor.ui">
+    <ClCompile Include="source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\qcustomplot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\raceteammonitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\cpptoml.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="include\qcustomplot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\raceteammonitor.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\event.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="form\orderchange.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtMoc Include="raceteammonitor.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <ClCompile Include="raceteammonitor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="qcustomplot.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="qcustomplot.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="data\0001.laps" />
+    <QtUic Include="form\raceteammonitor.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="form\event.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
