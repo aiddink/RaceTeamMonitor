@@ -48,7 +48,8 @@ RaceTeamMonitor::RaceTeamMonitor(QWidget* parent)
 
     // in case of changing racestart, the table will be recreated
     QObject::connect(_ui.racestart_datetimeedit, &QDateTimeEdit::dateTimeChanged, this,
-        [&]() {
+        [this]() {
+            _event.race_begin = _ui.racestart_datetimeedit->dateTime();
             createTable(_current_infos);
         });
 
@@ -537,10 +538,19 @@ void RaceTeamMonitor::labelTicker()
 {
     if (_current_infos.size() > 0)
     {
+        // determine measured duration
+        double measured_duration = 0.0;
+        for (auto& tmp_info : _current_infos)
+            if (tmp_info.type == "M")
+                measured_duration += tmp_info.duration;
+
+        auto race_time = timeDiff(QDateTime::currentDateTime(), _event.race_begin);
+        double race_duration = race_time.hour() * 60.0 + race_time.minute();
+
         LapInfo info = _current_infos.at(_current_idx);
         if (QDateTime::currentDateTime() > _ui.racestart_datetimeedit->dateTime())
         {
-            if (QDateTime::currentDateTime() < info.end && QDateTime::currentDateTime() < info.start)
+            if (measured_duration > race_duration)
             {
                 _ui.change_label->setText(QStringLiteral("Inkonsistent! Fahrzeit > Eventdauer"));
             }
@@ -846,7 +856,7 @@ void RaceTeamMonitor::clickedChange()
 // ...........................................................................
 {
     QPushButton* clicked = qobject_cast<QPushButton*>(sender());
-    if (clicked)
+    if (clicked && !_current_infos.empty())
     {
         QString button_text = clicked->text();
 
