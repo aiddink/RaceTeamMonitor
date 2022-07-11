@@ -84,7 +84,7 @@ RaceTeamMonitor::RaceTeamMonitor(QWidget* parent)
             msgBox.setWindowTitle("About");
             msgBox.setTextFormat(Qt::RichText);
             std::stringstream ss;
-            ss << "RaceTeamMonitor v0.2 Juli 2022 | ";
+            ss << "RaceTeamMonitor v0.3 Juli 2022 | ";
             ss << "<a href='https://github.com/aiddink/RaceTeamMonitor'>https://github.com/aiddink/RaceTeamMonitor</a>";
             msgBox.setText(QString::fromStdString(ss.str()));
             msgBox.exec();
